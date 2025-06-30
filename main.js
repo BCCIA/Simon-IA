@@ -209,7 +209,7 @@ function iniciarRefresco() {
     }, 5000);
   }
 
-  setTimeout(startRefreshSequence, 5 * 60 * 1000);
+  setTimeout(startRefreshSequence, 1 * 60 * 1000);
 }
 
 window.addEventListener("DOMContentLoaded", iniciarRefresco);
