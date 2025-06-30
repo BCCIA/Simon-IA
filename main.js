@@ -152,7 +152,8 @@ gsap.from(".home-social", {
   stagger: 0.2,
 });
 
-// ----------------- REFRESCO AUTOMÁTICO CADA 5 MINUTOS -----------------
+
+// ----------------- REFRESCO AUTOMÁTICO CADA 3 MINUTOS -----------------
 
 function iniciarRefresco() {
   let refreshTimeout;
@@ -187,7 +188,7 @@ function iniciarRefresco() {
       clearTimeout(refreshTimeout);
       document.removeEventListener('click', cancelAction);
       document.removeEventListener('touchstart', cancelAction);
-      setTimeout(startRefreshSequence, 5 * 60 * 1000);
+      setTimeout(startRefreshSequence, 3 * 60 * 1000); // 🔁 cambia a 3 minutos aquí también
     }
 
     document.addEventListener('click', cancelAction);
@@ -200,17 +201,19 @@ function iniciarRefresco() {
     }, 5000);
   }
 
-  setTimeout(startRefreshSequence, 5 * 60 * 1000);
+  setTimeout(startRefreshSequence, 3 * 60 * 1000); // 🔁 primera ejecución en 3 minutos
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  iniciarRefresco(); // 💡 asegúrate de llamar la función
   const refreshBtn = document.getElementById("refresh-btn");
-
   if (refreshBtn) {
     refreshBtn.addEventListener("click", () => {
       location.reload();
     });
   }
+});
+
 });
 
 
