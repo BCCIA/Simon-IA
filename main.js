@@ -155,6 +155,8 @@ gsap.from(".home-social", {
 
 // ----------------- REFRESCO AUTOMÁTICO CADA 3 MINUTOS -----------------
 
+// ----------------- REFRESCO AUTOMÁTICO CADA 3 MINUTOS -----------------
+
 function iniciarRefresco() {
   let refreshTimeout;
   let cancelRefresh = false;
@@ -212,8 +214,6 @@ window.addEventListener("DOMContentLoaded", () => {
       location.reload();
     });
   }
-});
-
 });
 
 
